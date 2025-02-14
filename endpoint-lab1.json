@@ -1,0 +1,32 @@
+{
+  "name": "endpoint-lab1",
+  "description": "Ponto de extremidade de inferência em tempo real para AI-900-lab1",
+  "properties": {
+    "endpointType": "ACI",
+    "scoringUri": "https://ai-900-lab1-endpoint.eastus.inference.ml.azure.com/score",
+    "authEnabled": true,
+    "authKey": "*****",
+    "tags": {
+      "environment": "production",
+      "project": "ml-project"
+    }
+  },
+  "deployment": {
+    "name": "experimento-lab1",
+    "modelId": "model-id",
+    "compute": {
+      "vmSize": "Standard_DSv4",
+      "cpu": 2,
+      "memory": "4GB"
+    },
+    "scoringScript": "score.py",
+    "image": "azureml.azureml.real-time-endpoint-image",
+    "runtime": "python",
+    "env": {
+      "name": "ml-env"
+    }
+  },
+  "createdOn": "2025-02-14T10:00:00Z",
+  "updatedOn": "2025-02-14T12:00:00Z",
+  "status": "Healthy"
+}
